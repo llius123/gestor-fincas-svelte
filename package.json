@@ -13,7 +13,8 @@
 		"migrate": "tsx src/lib/server/db/migrate.ts",
 		"studio": "drizzle-kit studio --config=src/lib/server/db/drizzle.config.ts",
 		"push": "drizzle-kit push:sqlite --config=src/lib/server/db/drizzle.config.ts",
-		"generate": "drizzle-kit generate:sqlite --config=src/lib/server/db/drizzle.config.ts"
+		"generate": "drizzle-kit generate:sqlite --config=src/lib/server/db/drizzle.config.ts",
+		"node": "node build/index.js"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^3.0.0",

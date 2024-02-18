@@ -4,7 +4,7 @@ import { login } from '$lib/server/db/login/login';
 
 export const POST: RequestHandler = async ({request}) => {
     const {username, password} =  await request.json();
-   const res: User[] = await login(username, password)
+   const res: User | undefined = await login(username, password)
 
 	return new Response(JSON.stringify(res));
 };
