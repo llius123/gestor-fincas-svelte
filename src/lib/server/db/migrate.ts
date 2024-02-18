@@ -11,7 +11,7 @@ migrate(db, { migrationsFolder: "drizzle" });
 await db.delete(users)
 const user: NewUser = {
     id:1,
-    fullName: "Yisus",
-    secondName: "Yisusito"
+    username: "yisus",
+    password: "yisus"
 }
 await db.insert(users).values(user)
