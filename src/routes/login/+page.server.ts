@@ -1,8 +1,9 @@
+import { saveTokenCookie } from "$lib/front/tokenService";
 import { login } from "$lib/server/db/login/login";
 import { redirect, type Actions } from "@sveltejs/kit";
 
 export const actions = {
-    default: async ({ request }) => {
+    default: async ({ request, cookies }) => {
         const data = await request.formData();
     
         const username = data.get('username');
@@ -21,7 +22,8 @@ export const actions = {
             return {success: false, error: 'Wrong username or password',}
         }
 
-        
+        saveTokenCookie({token: user.token, cookies})
+
         redirect(301,'/logged')
 	},
 } satisfies Actions;
