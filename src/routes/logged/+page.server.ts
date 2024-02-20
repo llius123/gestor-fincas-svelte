@@ -4,8 +4,7 @@ import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({cookies}) => {
     const token = getTokenCookie({cookies})
-    const a = await verifyAccessToken(token || '')
 	return {
-		valid: a
+		valid: await verifyAccessToken(token || '')
 	};
 };
